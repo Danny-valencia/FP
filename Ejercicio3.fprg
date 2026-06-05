@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Ejercicio3"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-24 08:50:11 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjQ7IjA3OjU0OjU3ICI7MjY1Mw=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjQ7IjA4OjUwOjExICI7MTsyNzQ4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Mayor, NumeroA, NumeroB, NumeroC" type="Real" array="False" size=""/>
+            <output expression="&quot;Ingrese el el primer numero&quot;" newline="True"/>
+            <input variable="NumeroA"/>
+            <output expression="&quot;Ingrese el segundo numero&quot;" newline="True"/>
+            <input variable="NumeroB"/>
+            <output expression="&quot;Ingrese el tercer numero&quot;" newline="True"/>
+            <input variable="NumeroC"/>
+            <if expression="NumeroA &gt; NumeroB">
+                <then>
+                    <assign variable="Mayor" expression="NumeroA"/>
+                </then>
+                <else>
+                    <assign variable="Mayor" expression="NumeroB"/>
+                </else>
+            </if>
+            <if expression="NumeroC &gt; Mayor">
+                <then>
+                    <assign variable="Mayor" expression="NumeroC"/>
+                </then>
+                <else>
+                    <assign variable="Mayor" expression="Mayor"/>
+                </else>
+            </if>
+            <output expression="&quot;El numero mayor es: &quot; &amp; Mayor" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

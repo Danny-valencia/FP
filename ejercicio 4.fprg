@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ejercicio 4"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-17 09:32:50 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTc7IjA4OjQxOjEwICI7MjY0MQ=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTc7IjA5OjMyOjUwICI7MTsyNzU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ValorMetroCubico, Distancia, PrecioTotal, Cantidad" type="Integer" array="False" size=""/>
+            <output expression="&quot;Valor metro cubico&quot;" newline="True"/>
+            <input variable="ValorMetroCubico"/>
+            <output expression="&quot;Solicite cuantas volquetas necesita&quot;" newline="True"/>
+            <input variable="Cantidad"/>
+            <output expression="&quot;Cuantos kilometros son&quot;" newline="True"/>
+            <input variable="Distancia"/>
+            <assign variable="PrecioTotal" expression="Cantidad * ValorMetroCubico * Distancia"/>
+            <output expression="&quot;El precio de su viaje es: &quot; &amp; PrecioTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

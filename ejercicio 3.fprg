@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ejercicio 3"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-17 08:15:15 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTc7IjA4OjAyOjEzICI7MjY0MQ=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTc7IjA4OjE1OjE1ICI7MTsyNzU1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NotaFinal, Nota1, Nota2, Nota3" type="Integer" array="False" size=""/>
+            <output expression="&quot;Digite su la nota 1&quot;" newline="True"/>
+            <input variable="Nota1"/>
+            <output expression="&quot;Digite la nota 2&quot;" newline="True"/>
+            <input variable="Nota2"/>
+            <output expression="&quot;Digite la nota 3&quot;" newline="True"/>
+            <input variable="Nota3"/>
+            <assign variable="NotaFinal" expression="(Nota1 + Nota2 + Nota3)/3"/>
+            <output expression="&quot;Su nota final es: &quot; &amp; NotaFinal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

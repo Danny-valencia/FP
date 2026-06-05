@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="OrganizadorNumerico"/>
+        <attribute name="authors" value="Estudiante"/>
+        <attribute name="about" value="Ordenamiento por Insercion"/>
+    </attributes>
+
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+
+            <declare name="TotalDatos" type="Integer" array="False" size=""/>
+
+            <output expression="&quot;¿Cuantos numeros desea ingresar?&quot;" newline="True"/>
+            <input variable="TotalDatos"/>
+
+            <declare name="ListaNumeros" type="Integer" array="True" size="TotalDatos"/>
+
+            <call expression="CapturarDatos(ListaNumeros, TotalDatos)"/>
+
+            <output expression="&quot;Numeros registrados:&quot;" newline="True"/>
+            <call expression="MostrarDatos(ListaNumeros, TotalDatos)"/>
+
+            <call expression="OrganizarInsercion(ListaNumeros, TotalDatos)"/>
+
+            <output expression="&quot;Numeros organizados de menor a mayor:&quot;" newline="True"/>
+
+            <call expression="MostrarDatos(ListaNumeros, TotalDatos)"/>
+
+        </body>
+    </function>
+
+    <function name="CapturarDatos" type="None" variable="">
+        <parameters>
+            <parameter name="Lista" type="Integer" array="True"/>
+            <parameter name="Limite" type="Integer" array="False"/>
+        </parameters>
+
+        <body>
+
+            <declare name="Posicion" type="Integer" array="False" size=""/>
+
+            <for variable="Posicion" start="0" end="Limite-1" direction="inc" step="1">
+
+                <output expression="&quot;Ingrese el valor &quot; &amp; (Posicion+1)" newline="True"/>
+
+                <input variable="Lista[Posicion]"/>
+
+            </for>
+
+        </body>
+    </function>
+
+    <function name="MostrarDatos" type="None" variable="">
+        <parameters>
+            <parameter name="Lista" type="Integer" array="True"/>
+            <parameter name="Limite" type="Integer" array="False"/>
+        </parameters>
+
+        <body>
+
+            <declare name="Posicion" type="Integer" array="False" size=""/>
+
+            <for variable="Posicion" start="0" end="Limite-1" direction="inc" step="1">
+
+                <output expression="Lista[Posicion]" newline="True"/>
+
+            </for>
+
+        </body>
+    </function>
+
+    <function name="OrganizarInsercion" type="None" variable="">
+        <parameters>
+            <parameter name="Lista" type="Integer" array="True"/>
+            <parameter name="Limite" type="Integer" array="False"/>
+        </parameters>
+
+        <body>
+
+            <declare name="Actual" type="Integer" array="False" size=""/>
+            <declare name="Anterior" type="Integer" array="False" size=""/>
+            <declare name="Temporal" type="Integer" array="False" size=""/>
+
+            <for variable="Actual" start="1" end="Limite-1" direction="inc" step="1">
+
+                <assign variable="Temporal" expression="Lista[Actual]"/>
+
+                <assign variable="Anterior" expression="Actual-1"/>
+
+                <while expression="Anterior &gt;= 0 and Lista[Anterior] &gt; Temporal">
+
+                    <assign variable="Lista[Anterior+1]" expression="Lista[Anterior]"/>
+
+                    <assign variable="Anterior" expression="Anterior-1"/>
+
+                </while>
+
+                <assign variable="Lista[Anterior+1]" expression="Temporal"/>
+
+            </for>
+
+        </body>
+    </function>
+
+</flowgorithm>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ejercicio 2"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-17 08:02:09 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTc7IjA3OjI1OjM4ICI7MjY1Mg=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTc7IjA4OjAyOjA5ICI7MTsyNzU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="TotalEdad, FechaActual, FechaNacimiento" type="Integer" array="False" size=""/>
+            <input variable="FechaActual"/>
+            <input variable="FechaNacimiento"/>
+            <assign variable="TotalEdad" expression="FechaActual - FechaNacimiento"/>
+            <output expression="&quot;Su edad es: &quot; &amp; TotalEdad" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

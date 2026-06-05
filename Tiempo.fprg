@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Tiempo"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-24 07:23:05 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjQ7IjAxOjQ0OjMyICI7MjYzOQ=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjQ7IjA3OjIzOjA1ICI7MTsyNzUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Distancia, Velocidad, Tiempo" type="Real" array="False" size=""/>
+            <assign variable="Velocidad" expression="30"/>
+            <output expression="&quot;Ingrese la distancia que va a recorrer en km&quot;" newline="True"/>
+            <input variable="Distancia"/>
+            <assign variable="Tiempo" expression="Distancia / Velocidad"/>
+            <assign variable="Distancia" expression="Tiempo * 60"/>
+            <output expression="&quot;El tiempo que tardaria en recorrer a su lugar de destino en bicicleta es: &quot; &amp; Tiempo &amp; &quot; h&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

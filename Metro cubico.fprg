@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Metro cubico"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-24 01:44:07 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjQ7IjAxOjMzOjMwICI7MjYzNQ=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjQ7IjAxOjQ0OjA3ICI7MTsyNzQ5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Volumen, Largo, Ancho, Alto, PrecioTotal, PrecioM3" type="Real" array="False" size=""/>
+            <assign variable="PrecioM3" expression="100000"/>
+            <output expression="&quot;Ingrese el Largo&quot;" newline="True"/>
+            <input variable="Largo"/>
+            <output expression="&quot;Ingrese el Alto&quot;" newline="True"/>
+            <input variable="Alto"/>
+            <output expression="&quot;Ingrese en Ancho&quot;" newline="True"/>
+            <input variable="Ancho"/>
+            <assign variable="Volumen" expression="Largo * Alto * Ancho"/>
+            <assign variable="PrecioTotal" expression="Volumen * PrecioM3"/>
+            <output expression="&quot;Su Total a pagar es: &quot; &amp; PrecioTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

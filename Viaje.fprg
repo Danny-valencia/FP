@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Viaje"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-26 06:40:02 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjY7IjA2OjA2OjE1ICI7MjY0NQ=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMjY7IjA2OjQwOjAyICI7MTsyNzQ3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="PrecioTotal, NdeEstudiantes, PrecioBus, PrecioxEstudiante" type="Real" array="False" size=""/>
+            <assign variable="PrecioBus" expression="8000000"/>
+            <output expression="&quot;Ingrese el numerode estudiantes que viajaran&quot;" newline="True"/>
+            <input variable="NdeEstudiantes"/>
+            <if expression="NdeEstudiantes &gt;= 100">
+                <then>
+                    <assign variable="PrecioxEstudiante" expression="65000"/>
+                </then>
+                <else>
+                    <if expression="NdeEstudiantes &gt;= 50">
+                        <then>
+                            <assign variable="PrecioxEstudiante" expression="70000"/>
+                        </then>
+                        <else>
+                            <if expression="NdeEstudiantes &gt;= 30">
+                                <then>
+                                    <assign variable="PrecioxEstudiante" expression="95000"/>
+                                </then>
+                                <else>
+                                    <assign variable="PrecioxEstudiante" expression="8000000 / NdeEstudiantes"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="PrecioTotal" expression="NdeEstudiantes * PrecioxEstudiante"/>
+            <output expression="&quot;El total a pagar para el viaje segun la cantidad de estudiantes es: &quot; &amp; PrecioTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

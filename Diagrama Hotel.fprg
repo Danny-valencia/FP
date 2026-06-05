@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Diagrama Hotel"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-17 07:08:32 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTU7IjAxOjA1OjM3ICI7MjY0MQ=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDQtMTc7IjA3OjA4OjMyICI7MzsyNzU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="TipoHabitacion, DeseaSeguro" type="String" array="False" size=""/>
+            <declare name="PrecioVentilador, PrecioAire, PrecioEstandar" type="Real" array="False" size=""/>
+            <assign variable="PrecioVentilador" expression="60000"/>
+            <assign variable="PrecioAire" expression="80000"/>
+            <assign variable="PrecioEstandar" expression="120000"/>
+            <declare name="PrecioTotal, Dias, Seguro" type="Real" array="False" size=""/>
+            <assign variable="Seguro" expression="10000"/>
+            <output expression="&quot;Ingrese Tipo de habitacion Aire, Ventilador o Estandar&quot;" newline="True"/>
+            <input variable="TipoHabitacion"/>
+            <input variable="Dias"/>
+            <output expression="&quot;&#191;Desea adquirir un seguro por valor de $10000? (Si/No)&quot;" newline="True"/>
+            <input variable="DeseaSeguro"/>
+            <if expression="TipoHabitacion == &quot;Aire&quot;">
+                <then>
+                    <assign variable="PrecioTotal" expression="PrecioAire * Dias"/>
+                </then>
+                <else>
+                    <if expression="TipoHabitacion == &quot;Ventilador&quot;">
+                        <then>
+                            <assign variable="PrecioTotal" expression="PrecioVentilador * Dias"/>
+                        </then>
+                        <else>
+                            <assign variable="PrecioTotal" expression="PrecioEstandar * Dias"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;El Valor total a pagar es:&quot; &amp; PrecioTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

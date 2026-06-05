@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CICLOS"/>
+        <attribute name="authors" value="danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-05-08 08:56:47 "/>
+        <attribute name="created" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDUtMDg7IjA3OjE1OjMzICI7MjY0Nw=="/>
+        <attribute name="edited" value="ZGFubnk7V0lMTUVSX01BRkxBOzIwMjYtMDUtMDg7IjA4OjU2OjQ3ICI7MzsyNzY4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="Largo, Ancho, Tama&#241;o" type="Real" array="False" size=""/>
+            <assign variable="Tama&#241;o" expression="random(100)"/>
+            <assign variable="Ancho" expression="Tama&#241;o*5"/>
+            <assign variable="Largo" expression="Tama&#241;o*5"/>
+            <call expression="HacerRectangulo(Ancho,Largo)"/>
+            <forward expression="Largo" pen="down"/>
+            <call expression="CrearTriangulo(Ancho)"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="Largo" pen="down"/>
+            <turn expression="90" rotate="left"/>
+        </body>
+    </function>
+    <function name="CrearTriangulo" type="None" variable="">
+        <parameters>
+            <parameter name="Ancho" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <turn expression="45" rotate="right"/>
+            <forward expression="Ancho*(sqrt(2))/2" pen="down"/>
+            <turn expression="90" rotate="right"/>
+            <forward expression="Ancho*(sqrt(2))/2" pen="down"/>
+            <turn expression="135" rotate="right"/>
+            <forward expression="Ancho" pen="down"/>
+        </body>
+    </function>
+    <function name="HacerRectangulo" type="None" variable="">
+        <parameters>
+            <parameter name="W" type="Real" array="False"/>
+            <parameter name="H" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="2" direction="inc" step="1">
+                <forward expression="H" pen="down"/>
+                <turn expression="90" rotate="right"/>
+                <forward expression="W" pen="down"/>
+                <turn expression="90" rotate="right"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
