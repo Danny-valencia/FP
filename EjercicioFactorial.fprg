@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="EjercicioFactorial"/>
+        <attribute name="authors" value="Danny"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-12 07:47:30 p.&#8239;m."/>
+        <attribute name="created" value="RGFubnk7REVTS1RPUC03QUEyNkhMOzIwMjYtMDYtMTI7MDU6NTM6NTIgcC7igK9tLjsxMTIwNA=="/>
+        <attribute name="edited" value="RGFubnk7REVTS1RPUC03QUEyNkhMOzIwMjYtMDYtMTI7MDc6NDc6MzAgcC7igK9tLjsyOzExMzE0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Numero, x" type="Integer" array="False" size=""/>
+            <output expression="&quot;digite el numero para sacar el factorial&quot;" newline="True"/>
+            <input variable="Numero"/>
+            <assign variable="x" expression="Numero mod(10)"/>
+            <output expression="x" newline="True"/>
+            <call expression="Factorial(Numero)"/>
+            <output expression="Factorial(Numero)" newline="True"/>
+        </body>
+    </function>
+    <function name="Factorial" type="Integer" variable="Resultado">
+        <parameters>
+            <parameter name="Numero" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Resultado" type="Integer" array="False" size=""/>
+            <if expression="Numero == 1">
+                <then>
+                    <assign variable="Resultado" expression="1"/>
+                </then>
+                <else>
+                    <assign variable="Resultado" expression="Numero * Factorial(Numero - 1)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Recursividad" type="None" variable="">
+        <parameters>
+            <parameter name="Modulo" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Modulo" type="Integer" array="False" size=""/>
+            <assign variable="" expression=""/>
+        </body>
+    </function>
+</flowgorithm>

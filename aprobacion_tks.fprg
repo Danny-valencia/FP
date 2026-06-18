@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="Modulo Aprobacion TKS"/>
+        <attribute name="authors" value="Desarrollador"/>
+        <attribute name="about" value="Simulacion de creacion de usuarios, validacion y admin"/>
+        <attribute name="saved" value="2026-06-18 03:52:35 PM"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="opcionMenu, decisionValidador" type="Integer" array="False" size=""/>
+            <declare name="tieneSolicitudPendiente" type="Boolean" array="False" size=""/>
+            <declare name="estadoCaso, nombreUsuario, correo, justificacion, motivoRechazo" type="String" array="False" size=""/>
+            
+            <assign variable="tieneSolicitudPendiente" expression="false"/>
+            <assign variable="estadoCaso" expression="&quot;Ninguno&quot;"/>
+            <assign variable="nombreUsuario" expression="&quot;&quot;"/>
+            <assign variable="correo" expression="&quot;&quot;"/>
+            <assign variable="justificacion" expression="&quot;&quot;"/>
+            
+            <assign variable="opcionMenu" expression="0"/>
+            <while expression="opcionMenu != 4">
+                <output expression="&quot;--- MENU SISTEMA TKS ---&quot;" newline="True"/>
+                <output expression="&quot;1. Solicitar Acceso (Usuario Nuevo)&quot;" newline="True"/>
+                <output expression="&quot;2. Panel del Validador&quot;" newline="True"/>
+                <output expression="&quot;3. Panel del Administrador&quot;" newline="True"/>
+                <output expression="&quot;4. Salir del sistema&quot;" newline="True"/>
+                <input variable="opcionMenu"/>
+                
+                <if expression="opcionMenu == 1">
+                    <then>
+                        <if expression="tieneSolicitudPendiente == true">
+                            <then>
+                                <output expression="&quot;ERROR: Ya tienes una solicitud en proceso. Espera la respuesta.&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Ingrese su Nombre:&quot;" newline="True"/>
+                                <input variable="nombreUsuario"/>
+                                <output expression="&quot;Ingrese su Correo:&quot;" newline="True"/>
+                                <input variable="correo"/>
+                                <output expression="&quot;Ingrese la justificacion de acceso:&quot;" newline="True"/>
+                                <input variable="justificacion"/>
+                                <assign variable="estadoCaso" expression="&quot;Pendiente&quot;"/>
+                                <assign variable="tieneSolicitudPendiente" expression="true"/>
+                                <output expression="&quot;Solicitud enviada con exito. Estado del caso: &quot; &amp; estadoCaso" newline="True"/>
+                                <output expression="&quot;[ALERTA]: Correo automatico enviado al Validador.&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="opcionMenu == 2">
+                            <then>
+                                <output expression="&quot;--- PANEL VALIDADOR ---&quot;" newline="True"/>
+                                <if expression="estadoCaso == &quot;Pendiente&quot;">
+                                    <then>
+                                        <output expression="&quot;Tienes 1 caso pendiente de aprobacion.&quot;" newline="True"/>
+                                        <output expression="&quot;Datos: &quot; &amp; nombreUsuario &amp; &quot; - &quot; &amp; correo" newline="True"/>
+                                        <output expression="&quot;Que deseas hacer? 1. Aprobar | 2. Rechazar&quot;" newline="True"/>
+                                        <input variable="decisionValidador"/>
+                                        <if expression="decisionValidador == 1">
+                                            <then>
+                                                <assign variable="estadoCaso" expression="&quot;Aprobado&quot;"/>
+                                                <assign variable="tieneSolicitudPendiente" expression="false"/>
+                                                <output expression="&quot;[EXITO]: Usuario creado en el sistema. Credenciales enviadas.&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Ingrese el motivo de rechazo:&quot;" newline="True"/>
+                                                <input variable="motivoRechazo"/>
+                                                <assign variable="estadoCaso" expression="&quot;Rechazado&quot;"/>
+                                                <assign variable="tieneSolicitudPendiente" expression="false"/>
+                                                <output expression="&quot;Caso Rechazado. Motivo guardado: &quot; &amp; motivoRechazo" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;No hay casos de creacion de usuario pendientes por validar.&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="opcionMenu == 3">
+                                    <then>
+                                        <output expression="&quot;--- PANEL ADMINISTRADOR ---&quot;" newline="True"/>
+                                        <output expression="&quot;Mostrando todos los casos sin restricciones...&quot;" newline="True"/>
+                                        <if expression="estadoCaso != &quot;Ninguno&quot;">
+                                            <then>
+                                                <output expression="&quot;[Color Resaltado] Caso Actual: &quot; &amp; nombreUsuario &amp; &quot; | Estado: &quot; &amp; estadoCaso" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;La base de datos de casos esta vacia.&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;---------------------------------&quot;" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
